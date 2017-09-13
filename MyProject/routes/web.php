@@ -11,36 +11,29 @@
 |
 */
 
-Route::get('/app', function(){
-    return view('app');
-});
-
-Route::get('/child', function(){
-    return view('child');
-});
+Route::get('/', 'ToDoController@GetToDo');
+Route::post('/addtodo', 'ToDoController@AddToDo');
 
 
+// Route::get('/app', function(){
+//     return view('app');
+// });
 
+// Route::get('/child', function(){
+//     return view('child');
+// });
 
+// Route::get('/', function () {
+//     return view('calculator.calculator', ['name' => 'James'] );
+// });
 
+// Route::get('/mydata/{id?}/name/{name?}', function($id = "", $name = ""){
+//     return $id . " " . $name;
+// });
 
+// Route::get('fromController', 'MyController@GetData');
 
-
-
-
-
-
-Route::get('/', function () {
-    return view('calculator.calculator', ['name' => 'James'] );
-});
-
-Route::get('/mydata/{id?}/name/{name?}', function($id = "", $name = ""){
-    return $id . " " . $name;
-});
-
-Route::get('fromController', 'MyController@GetData');
-
-Route::get('fromController2/{id?}', 'MyController@GetData2');
+// Route::get('fromController2/{id?}', 'MyController@GetData2');
 
 
 
