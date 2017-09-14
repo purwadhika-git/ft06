@@ -15,7 +15,7 @@
 
             <div class="form-group">
                 <label>To Do</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="mytodo">
             </div>
             <button class="btn btn-default" type="submit" ><b>+</b> Add To Do</button>
         </form>
@@ -36,10 +36,10 @@
     
     @foreach($data as $d)
 
-        @if($d["completed"] == false)
+        @if(true)
             
             <tr>
-                <td>{{ $d["todo"] }} </td>
+                <td>{{ $d->todo }} </td>
                 <td>
                     <input type="checkbox" value="">
                 </td>
