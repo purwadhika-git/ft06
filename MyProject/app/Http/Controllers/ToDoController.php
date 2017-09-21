@@ -28,13 +28,20 @@ class ToDoController extends Controller
     function AddToDo(Request $request){
 
         $this->validate(
-            $request, [ 'mytodo' => 'required|max:10']
+            $request, [ 'mytodo' => 'required|max:256']
         );
         
         $newTodo = $request->mytodo;
 
         DB::insert('insert into todo (todo) values (?)', [$newTodo]);
 
+        return redirect('/');
+    }
+
+    function DeleteToDo($id){
+        //DB::delete('delete todo where id = ?', [$id]);
+        DB::update('update todo set deleted = 1 where id = ?', [$id]);
+        
         return redirect('/');
     }
 

@@ -23,39 +23,42 @@
  </div>
 
 <div class="panel panel-default">
-<div class="panel-heading">
-    <h3 class="panel-title">To Do List</h3>
-</div>
-<div class="panel-body">
-    <table class="table table-striped table-bordered">
-    <tr>
-        <th>To Do</th>
-        <th></th>
-        <th></th>
-    </tr>
-    
-    @foreach($data as $d)
-
-        @if(true)
-            
+    <div class="panel-heading">
+        <h3 class="panel-title">To Do List</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-bordered">
             <tr>
-                <td>{{ $d->todo }} </td>
-                <td>
-                    <input type="checkbox" value="">
-                </td>
-                <td>
-                    <button type="button" class="btn btn-danger">
-                    <span class="glyphicon glyphicon-trash"></span> Delete
-                    </button>
-                </td>
+                <th>To Do</th>
+                <th></th>
+                <th></th>
             </tr>
+            
+            @foreach($data as $d)
 
-        @endif
+                @if($d->deleted == false)
+                
+                    <tr>
+                        <td>{{ $d->todo }} </td>
+                        <td>
+                            <input type="checkbox" value="">
+                        </td>
+                        <td>
+                            <form action="{{ url('deletetodo/' . $d->id) }}" method="POST" >
+                                {{ csrf_field() }}
+                                <button type="submit" class="btn btn-danger">
+                                    <span class="glyphicon glyphicon-trash"></span> Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
 
-    @endforeach
+                @endif
 
-    </table>
-</div>
+            @endforeach
+
+        </table>
+    </div>
 </div>
 
 @endsection

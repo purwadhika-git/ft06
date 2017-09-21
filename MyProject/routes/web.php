@@ -13,6 +13,7 @@
 
 Route::get('/', 'ToDoController@GetToDo');
 Route::post('/addtodo', 'ToDoController@AddToDo');
+Route::post('/deletetodo/{id}', 'ToDoController@DeleteToDo');
 
 
 // Route::get('/app', function(){
