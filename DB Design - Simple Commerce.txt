@@ -1,0 +1,71 @@
+DB Design :
+
+product
+	- name
+	- price
+	- size
+	- tags
+	- description
+
+product_category
+	- category_id [FK]
+	- product_id [FK]
+
+category
+	- category_name
+	
+product_image
+	- product_id [FK]
+	- image
+
+user
+- name
+- email
+- password
+- dob
+- pob
+- phone_number
+
+user_address
+- user_id [FK]
+- nama_penerima
+- no_hp_penerima
+- alamat
+- kota
+- provinsi
+- kode_pos
+- default
+
+order
+- code
+- user_id [FK][nullable]
+- order_date
+- delivery_option
+- total
+
+order_info
+- order_id [FK]
+- email
+- nama_penerima
+- no_hp_penerima
+- alamat
+- kota
+- provinsi
+- kode_pos
+- default
+
+order_details
+- order_id [FK]
+- product_id [FK]
+- qty
+- price
+
+
+
+
+
+
+
+
+
+
