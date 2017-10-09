@@ -8,15 +8,16 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-
+    <link rel="stylesheet" href="css/myStyle.css">
 
 </head>
 <body>
 
     <div style="margin-left:20px; margin-right:20px;">
 
+        <!-- navigation -->
         <div class="col-xs-12">
-            <nav class="navbar navbar-default">
+            <nav class="navbar navbar-default custom-navbar">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
@@ -36,9 +37,14 @@
                         
                         <form class="navbar-form navbar-right">
                             <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
+                            <input type="text" class="search-box" placeholder="Search">
                             </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
+                            <button type="submit" class="search-btn">
+                                <span class="glyphicon glyphicon-search" ></span>
+                            </button>
+                            <button type="button" class="search-btn">
+                                <span class="glyphicon glyphicon-shopping-cart" ></span>
+                            </button>
                         </form>
 
                         <ul class="nav navbar-nav navbar-right">
@@ -61,7 +67,27 @@
             </nav>
         </div>
 
-        <div class="col-xs-12"></div>
+        <!-- product list -->
+        <div class="col-xs-12">
+            <div class="col-xs-12 col-sm-4">
+                <img src="img/product/product1.jpg" alt="" class="img-responsive" style="width:100%">
+                <div class="product-name">
+                    Product 1
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <img src="img/product/product2.jpg" alt="" class="img-responsive" style="width:100%">
+                <div class="product-name">
+                    Product 2
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <img src="img/product/product3.jpg" alt="" class="img-responsive" style="width:100%">
+                <div class="product-name">
+                    Product 3
+                </div>
+            </div>
+        </div>
 
         <div class="col-xs-12"></div>
 
