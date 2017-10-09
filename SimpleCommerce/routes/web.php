@@ -12,10 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
 
 Route::get('/product', function () {
     $productList = App\Product::all();
     return $productList;
 });
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
