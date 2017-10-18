@@ -1,10 +1,24 @@
+github : https://github.com/purwadhika-git/ft06.git
 
-bit.ly/jc_be
-
-https://github.com/purwadhika-git/ft06.git
+template : http://bit.ly/2yNWfrh
 
 command : php artisan make:model ProductImage -m
 command : php artisan make:auth
+
+==========================================
+
+pages : 
+	- home : home.blade.php
+	- contact : contact.blade.php
+	- register - login : login.blade.php
+	- category full width : category.blade.php
+	- product details : productdetails.blade.php
+	- shopping cart : cart.blade.php
+	- check out step 1 - 4 : 
+	
+
+
+==========================================
 
 DB Design :
 
