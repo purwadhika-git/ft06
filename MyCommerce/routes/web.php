@@ -18,3 +18,21 @@ Route::get('/', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/category', function () {
+    return view('category');
+});
+
+Route::get('/productdetails', function () {
+    return view('productdetails');
+});
+
+Route::get('/cart', function () {
+    return view('cart');
+});
+
+
