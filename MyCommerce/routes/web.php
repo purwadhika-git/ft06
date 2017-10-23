@@ -15,24 +15,32 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/contact', function () {
-    return view('contact');
+Route::group(['prefix' => 'products'], function() {
+    Route::get('/all', function () {
+        return view('product.product-many');
+    });
+    Route::get('/detail', function () {
+        return view('product.product-single');
+    });
+    Route::get('/bycategory', function () {
+        return view('product.product-many');
+    });
 });
 
-Route::get('/login', function () {
-    return view('login');
+Route::group(['prefix' => 'orders'], function() {
+    Route::get('/addtocart', function () {
+        return view('order.cart');
+    });
+
+    Route::get('/checkout', function () {
+        return view('order.checkout');
+    });
+
+    Route::post('/checkout', function () {
+        return view('order.checkout');
+    });
 });
 
-Route::get('/category', function () {
-    return view('category');
-});
+Auth::routes();
 
-Route::get('/productdetails', function () {
-    return view('productdetails');
-});
-
-Route::get('/cart', function () {
-    return view('cart');
-});
-
-
+//Route::get('/home', 'HomeController@index')->name('home');
