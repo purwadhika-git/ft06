@@ -12,7 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    
+    $category_list = DB::select('select * from categories');
+    
+    // for($i = 1; $i <= 10; $i++){
+    //     $obj = new stdClass;
+    //     $obj->category_name = "Category " . $i;
+
+    //     array_push($category_list, $obj);
+    // }
+
+    return view('home', ["categories" => $category_list]);
 });
 
 Route::group(['prefix' => 'products'], function() {

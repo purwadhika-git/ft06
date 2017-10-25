@@ -95,8 +95,10 @@
     <div class="container">
         <p class="text-muted lead text-center">In our Ladies department we offer wide selection of the best products we have found and carefully selected worldwide. Pellentesque habitant morbi tristique senectus et netuss.</p>
         <ul class="owl-carousel testimonials same-height-row">
-            @for ($i = 0; $i < 5; $i++)
-                <li class="item">
+
+            @foreach($categories as $c)
+                
+                 <li class="item">
                     <div class="product">
                         <div class="image">
                             <a href="{{ url('/products/bycategory') }}">
@@ -105,26 +107,14 @@
                         </div>
                         <!-- /.image -->
                         <div class="text">
-                            <h3><a href="shop-detail.html">Category {{ ($i + 1) }}</a></h3>
-                            {{--  <p class="price">$143.00</p>  --}}
-                        </div>
-                        <!-- /.text -->
-                    </div>
-                    <div class="product">
-                        <div class="image">
-                            <a href="{{ url('/products/bycategory') }}">
-                                <img src="img/product2.jpg" alt="" class="img-responsive image1">
-                            </a>
-                        </div>
-                        <!-- /.image -->
-                        <div class="text">
-                            <h3><a href="shop-detail.html">Category {{ ($i + 6) }}</a></h3>
+                            <h3><a href="{{ url('/products/bycategory') }}">{{ $c->categoryName }}</a></h3>
                             {{--  <p class="price">$143.00</p>  --}}
                         </div>
                         <!-- /.text -->
                     </div>
                 </li>
-            @endfor                
+            @endforeach
+
         </ul>
 
     </div>
