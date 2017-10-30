@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Kalnoy\Nestedset\NestedSet;
 
-class CreateCategoryTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,6 +18,7 @@ class CreateCategoryTable extends Migration
             $table->increments('id');
             $table->string('categoryName');
             $table->string('categoryImage');
+            NestedSet::columns($table);
             $table->timestamps();
         });
     }
