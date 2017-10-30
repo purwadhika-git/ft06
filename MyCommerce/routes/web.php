@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     
-    $category_list = DB::select('select * from categories');
+    $category_list = DB::select('select categoryName, categoryImage from categories');
     
     // for($i = 1; $i <= 10; $i++){
     //     $obj = new stdClass;
@@ -23,6 +23,7 @@ Route::get('/', function () {
     // }
 
     return view('home', ["categories" => $category_list]);
+
 });
 
 Route::group(['prefix' => 'products'], function() {

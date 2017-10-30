@@ -102,7 +102,7 @@
                     <div class="product">
                         <div class="image">
                             <a href="{{ url('/products/bycategory') }}">
-                                <img src="img/product1.jpg" alt="" class="img-responsive image1">
+                                <img src="{{ url($c->categoryImage) }}" alt="" class="img-responsive image1">
                             </a>
                         </div>
                         <!-- /.image -->
